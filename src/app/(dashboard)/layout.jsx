@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   return (
     <div className="flex ">
       {/* Left */}
-      <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%]  p-4">
+      <div className="w-[15%] md:w-[8%] lg:w-[16%] xl:w-[14%]  p-4">
         <Link
           href="/"
           className="flex justify-center items-center lg:justify-start gap-2"
@@ -18,7 +18,7 @@ export default function Layout({ children }) {
         <Menu />
       </div>
       {/* Right */}
-      <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#f7f8fa] flex flex-col ">
+      <div className="w-[85%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#f7f8fa] flex flex-col ">
         <Navbar />
         {children}
       </div>

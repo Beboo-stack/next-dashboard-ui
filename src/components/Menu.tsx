@@ -121,7 +121,9 @@ const Menu = () => {
     <div className="mt-5 text-sm">
       {menuItems.map((i, id) => (
         <div className="flex flex-col gap-2" key={id}>
-          <span className="font-bold my-2">{i.title}</span>
+          <span className="text-[10px] flex justify-center items-start font-bold my-2">
+            {i.title}
+          </span>
           {i.items.map((item, id) => (
             <Link
               className="flex justify-center items-center lg:justify-start py-2 gap-4 text-gray-500"
