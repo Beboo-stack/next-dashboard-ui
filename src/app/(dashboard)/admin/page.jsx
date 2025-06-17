@@ -3,9 +3,11 @@ import UserCard from "@/components/UserCard";
 import CountChart from "@/components/CountChart";
 import AttendanceChart from "@/components/AttendanceChart";
 import FinanceChart from "@/components/FinanceChart";
+import EventCalender from "@/components/EventCalender";
+import Announcement from "@/components/Announcement";
 
 const page = () => {
-  return (
+  return ( 
     <div className="flex flex-col md:flex-row p-4 gap-4">
       {/* Left */}
       <div className="w-full lg:w-2/3 flex flex-col gap-8 ">
@@ -30,7 +32,10 @@ const page = () => {
         </div>
       </div>
       {/* Right */}
-      <div className="w-full lg:w-1/3">r</div>
+      <div className="w-full lg:w-1/3 flex flex-col gap-8">
+        <EventCalender />
+        <Announcement />
+      </div>
     </div>
   );
 };
