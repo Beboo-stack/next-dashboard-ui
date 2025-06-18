@@ -18,7 +18,7 @@ export default function Layout({ children }) {
         <Menu />
       </div>
       {/* Right */}
-      <div className="w-[85%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#f7f8fa] flex flex-col ">
+      <div className="w-[85%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#f7f8fa] flex flex-col overflow-y-auto ">
         <Navbar />
         {children}
       </div>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Paginations from "@/components/Paginations";
 import Table from "@/components/Table";
 import Link from "next/link";
-import { role, teachersData } from "@/lib/data";
+import { role, studentsData } from "@/lib/data";
 
 const page = () => {
   const columns = [
@@ -13,18 +13,13 @@ const page = () => {
       accessor: "info",
     },
     {
-      header: "Teacher Id",
-      accessor: "teacherId",
+      header: "Student Id",
+      accessor: "studentId",
       className: "hidden md:table-cell",
     },
     {
-      header: "Subjects",
-      accessor: "subjects",
-      className: "hidden md:table-cell",
-    },
-    {
-      header: "Classes",
-      accessor: "classes",
+      header: "Grade",
+      accessor: "grade",
       className: "hidden md:table-cell",
     },
     {
@@ -58,12 +53,11 @@ const page = () => {
         />
         <div className="flex flex-col">
           <h3 className="font-semibold">{data.name}</h3>
-          <p className="text-xs text-gray-500">{data.email}</p>
+          <p className="text-xs text-gray-500">{data.class}</p>
         </div>
       </td>
-      <td className="hidden md:table-cell"> {data.teacherID} </td>
-      <td className="hidden md:table-cell"> {data.subjects.join(",")} </td>
-      <td className="hidden md:table-cell"> {data.classes.join(",")} </td>
+      <td className="hidden md:table-cell"> {data.studentId} </td>
+      <td className="hidden md:table-cell"> {data.grade} </td>
       <td className="hidden md:table-cell"> {data.phone} </td>
       <td className="hidden md:table-cell"> {data.address} </td>
       <td>
@@ -88,7 +82,7 @@ const page = () => {
     <div className="flex-1 p-4 bg-white rounded-md m-4 mt-0">
       {/* TOP */}
       <div className="flex justify-between items-center">
-        <h1 className="hidden md:block text-lg font-semibold">All Teachers</h1>
+        <h1 className="hidden md:block text-lg font-semibold">All Students</h1>
         <div className="flex w-full md:w-auto flex-col md:flex-row items-center gap-4 ">
           <TableSearch />
           <div className="flex self-end gap-4">
@@ -106,10 +100,12 @@ const page = () => {
       </div>
 
       {/* LIST */}
-      <Table columns={columns} renderRow={renderRow} data={teachersData} />
+      <Table columns={columns} renderRow={renderRow} data={studentsData} />
 
       {/* PAGINATION */}
-      <Paginations />
+      <div className="">
+        <Paginations />
+      </div>
     </div>
   );
 };
